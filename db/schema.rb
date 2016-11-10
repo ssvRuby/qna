@@ -15,12 +15,12 @@ ActiveRecord::Schema.define(version: 20161109210900) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "ansvers", force: :cascade do |t|
+  create_table "answers", force: :cascade do |t|
     t.string   "body"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "question_id"
-    t.index ["question_id"], name: "index_ansvers_on_question_id", using: :btree
+    t.index ["question_id"], name: "index_answers_on_question_id", using: :btree
   end
 
   create_table "questions", force: :cascade do |t|
@@ -30,4 +30,5 @@ ActiveRecord::Schema.define(version: 20161109210900) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "answers", "questions"
 end

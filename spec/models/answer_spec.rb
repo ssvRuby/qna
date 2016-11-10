@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Ansver, :type => :model do
+RSpec.describe Answer, :type => :model do
 
   it { should belong_to :question }
 
