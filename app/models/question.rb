@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
-  has_many :answers
+  has_many :answers, dependent: :destroy
 
-  validates :title, presence:  true, length: { minimum: 1, maximum: 255 }
+  validates :title, presence:  true, length: { maximum: 255 }
   validates :body,  presence:  true
 end
