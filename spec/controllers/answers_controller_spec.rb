@@ -10,7 +10,7 @@ RSpec.describe AnswersController, type: :controller do
     context 'valid' do
       it 'save answer' do
         expect { process :create, method: :post, params: { answer: attributes_for(:answer), question_id: question } }
-            .to change(Answer, :count).by(1)
+            .to change(question.answers, :count).by(1)
       end
 
       it 'redirects to show' do
