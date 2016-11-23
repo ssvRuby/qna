@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
   end
 
   def new
-    @answer = Answer.new
+    # @answer = Answer.new
   end
 
   def create
@@ -15,7 +15,8 @@ class AnswersController < ApplicationController
     if @answer.save
       redirect_to @question
     else
-      render :new
+      # render :new
+      render @question
     end
   end
 

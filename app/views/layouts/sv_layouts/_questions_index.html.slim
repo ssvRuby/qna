@@ -1,0 +1,10 @@
+  - @questions.each do |q|
+    .panel.panel-default
+      .panel-heading
+        .h3 class="panel-title" = q.title
+      .panel-body = q.body
+      .panel-footer
+        div align="right" = link_to 'Show answers', question_path(q), class: 'btn btn-link'
+
+        /= submit_tag 'Create answer', class: 'btn btn-primary'
+    end
